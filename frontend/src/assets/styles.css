@@ -1,0 +1,158 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.app-container {
+  display: flex;
+  height: 100vh;   /* occupe toute la hauteur */
+  width: 100vw;    /* occupe toute la largeur */
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background: #ffe4ec;
+  border-right: 1px solid #ffccd9;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-top {
+  position: sticky;
+  top: 0;
+  background: #ffe4ec;
+  z-index: 1;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+}
+
+.new-btn {
+  background: #ff99b3;
+  padding: 10px;
+}
+
+.clear-btn {
+  background: #ffc0cb;
+  padding: 8px;
+}
+
+.conversations-list {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.conversation-item {
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.conversation-item.active {
+  background: #ffb6c1;
+}
+
+.delete-btn {
+  color: #ff99b3;
+  font-weight: bold;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.conversation-item:hover .delete-btn {
+  opacity: 1;
+}
+
+/* Chat principal */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #fff0f5;
+}
+
+.messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+/* Messages */
+.message {
+  display: flex;
+  margin-bottom: 12px;
+}
+.message.user {
+  justify-content: flex-end;
+}
+.message.model,
+.message.typing {
+  justify-content: flex-start;
+}
+.message-content {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: 10px;
+  word-break: break-word;
+}
+.message.user .message-content {
+  background-color: #ffcce0;
+}
+.message.model .message-content,
+.message.typing .message-content {
+  background-color: #ffe0eb;
+}
+
+/* Zone input */
+.input-container {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ffccd9;
+  position: sticky;
+  bottom: 0;
+  background: #fff0f5;
+}
+
+.input-container input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ffccd9;
+}
+
+.send-btn {
+  background: #ff99b3;
+  padding: 10px 15px;
+  margin-left: 10px;
+}
+
+/* Code style */
+.code {
+  background-color: #ffcce0;
+  color: #990033;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  overflow-x: auto;
+  margin: 5px 0;
+}
